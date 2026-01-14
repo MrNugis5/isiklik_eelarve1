@@ -1,5 +1,8 @@
+from gui import *
+
 def add_new():
     global order
+    
 
     try:
         summa = int(summa_entry.get())
@@ -34,15 +37,7 @@ def show_all():
         kogu_tekst += f"  Kategooria: {v['kategooria']}\n"
         kogu_tekst += f"  Kirjeldus: {v['kirjeldus']}\n"
         kogu_tekst += f"  Tüüp: {v['tyyp']}\n\n"
-
-    def trukita_taht_haaval(index=0):
-        if index < len(kogu_tekst):
-            output_text.insert(END, kogu_tekst[index])
-            windows.after(10, trukita_taht_haaval, index + 1)
-
-    trukita_taht_haaval()
-
-
+        
 def summa():
     kokku = 0
     for v in andmed.values():
